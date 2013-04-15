@@ -1,0 +1,38 @@
+Nashorn est le successeur de Rhino en tant que moteur d'exécution Javascript (ECMAScript) au sein de la JVM pour Java 8.
+Il utilise les MethodHandles et surtout InvokeDynamic spécifiés par la JSR-292.
+Il a été publié le 21 décembre 2012 par Oracle dans OpenJDK.
+
+Que peut-on en faire ?
+On peut ainsi développer des applications entières en Javascript coté serveur.
+On peut même parait-il faire fonctionner node.js dans la JVM : 
+http://insin-notes.readthedocs.org/en/latest/JavaOne2012/nashorn_node_jpa_persistence_bof.html
+
+Comment ca marche ? 
+Grace à Nashorn, il est possible de faire interagir un programme Java et un programme Javascript ensembles.
+Autrement dit, pour pourrez :
+- faire transiter des variables entre ces deux modes
+- permettre à Java d'appeler des fonctions Javascript et inversement
+
+Voici un exemple complet : 
+
+La partie Java :
+
+La partie Javascript :
+
+Conclusion :
+Je pense que des frameworks vont rapidement arriver pour mettre à profit ces fonctionnalités qui deviennent enfin utilisables en termes de perf et de compatibilité ECMA test262 (contrairement à Rhino).
+
+
+Note : 
+Il est possible malgré tout d'utiliser Nashorn avec Java 7 à l'aide d'un portage de l'api : 
+bootclasspath with -Xbootclasspath/a:$NASHORN_HOME/dist/nashorn.jar
+
+
+Liens utiles :
+
+https://blogs.oracle.com/nashorn/entry/welcome_to_the_nashorn_blog
+http://en.wikipedia.org/wiki/Nashorn_(JavaScript_engine)
+http://parleys.com/#play/5148922b0364bc17fc56c90e
+http://webinjava.blogspot.co.uk/2013/03/nashorn-return-value-from-nashorn-to.html
+http://benjiweber.co.uk/blog/2013/01/27/javascript-tests-with-junit/
+http://benjiweber.co.uk/blog/2013/01/27/javascript-shell-scripting-with-nashorn/
